@@ -154,7 +154,7 @@ public class HelloWorld {
         System.out.println(Arrays.deepToString(TwoDimensionalArrays.mineSweeper(bombs1, 3, 3)));
         //should return:
         // [[0, 1, -1],
-        //  [1, 21, 1],
+        //  [1, 2, 1],
         //  [-1, 1, 0]]
 
         int[][] bombs2 = {{0, 0}, {0, 1}, {1, 2}};
@@ -174,6 +174,30 @@ public class HelloWorld {
         //  [0, 0, 1, -1, 1]]
 
         //</editor-fold
+
+        //<editor-fold> desc = "#8 - Rotate a 2D array 90 degrees"
+
+        int a1[][] = {{1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.rotate(a1, 3)));
+        //should return:
+        // [[7, 4, 1],
+        //  [8, 5, 2],
+        //  [9, 6, 3]]
+
+        int a2[][] = {{1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.rotate(a2, 4)) + resultSeparator);
+        //should return:
+        // [[13, 9, 5, 1],
+        //  [14, 10, 6, 2],
+        //  [15, 11, 7, 3],
+        //  [16, 12, 8, 4]]
+
+        //</editor-fold>
 
         //</editor-fold>
 
@@ -229,7 +253,7 @@ public class HelloWorld {
         return true;
     }
 
-    // 04 Check if two strings with numbers have are greater than each other
+    // 04 Check if two strings with numbers are greater than each other
     public static boolean isGreaterThan (String firstNumber, String secondNumber){
         if (firstNumber.length() > secondNumber.length()){
             return true;
