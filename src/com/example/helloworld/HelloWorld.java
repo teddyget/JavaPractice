@@ -149,6 +149,32 @@ public class HelloWorld {
 
         //</editor-fold>
 
+        //<editor-fold> desc = "#6 - Assign numbers in a Minesweeper (Two Dimensional array)"
+        int[][] bombs1 = {{0, 2}, {2, 0}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.mineSweeper(bombs1, 3, 3)));
+        //should return:
+        // [[0, 1, -1],
+        //  [1, 21, 1],
+        //  [-1, 1, 0]]
+
+        int[][] bombs2 = {{0, 0}, {0, 1}, {1, 2}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.mineSweeper(bombs2, 3, 4)));
+        //should return:
+        // [[-1, -1, 2, 1],
+        //  [2, 3, -1, 1],
+        //  [0, 1, 1, 1]]
+
+        int[][] bombs3 = {{1, 1}, {1, 2}, {2, 2}, {4, 3}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.mineSweeper(bombs3, 5, 5)) + resultSeparator);
+        //should return:
+        // [[1, 2, 2, 1, 0],
+        //  [1, -1, -1, 2, 0],
+        //  [1, 3, -1, 2, 0],
+        //  [0, 1, 2, 2, 1],
+        //  [0, 0, 1, -1, 1]]
+
+        //</editor-fold
+
         //</editor-fold>
 
     }
