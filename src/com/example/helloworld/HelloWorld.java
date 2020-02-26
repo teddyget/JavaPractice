@@ -127,10 +127,14 @@ public class HelloWorld {
         //<</editor-fold>
 
         //<editor-fold> desc = "#4 - Find the first non repeating character in a string"
-        System.out.println(StringQuestions.nonRepeating("abcab")); // should return 'c'
-        System.out.println(StringQuestions.nonRepeating("abab")); // should return null
-        System.out.println(StringQuestions.nonRepeating("aabbbc")); // should return 'c'
-        System.out.println(StringQuestions.nonRepeating("aabbdbc") + resultSeparator); // should return 'd'
+//        System.out.println(StringQuestions.nonRepeating("abcab")); // should return 'c'
+//        System.out.println(StringQuestions.nonRepeating("abab")); // should return null
+//        System.out.println(StringQuestions.nonRepeating("aabbbc")); // should return 'c'
+//        System.out.println(StringQuestions.nonRepeating("aabbdbc") + resultSeparator); // should return 'd'
+        System.out.println(StringQuestions.nonRepeatingChar("abcab")); // should return 'c'
+        System.out.println(StringQuestions.nonRepeatingChar("abab")); // should return null
+        System.out.println(StringQuestions.nonRepeatingChar("aabbbc")); // should return 'c'
+        System.out.println(StringQuestions.nonRepeatingChar("aabbdbc") + resultSeparator); // should return 'd'
         //</editor-fold>
 
         //<editor-fold> desc = "#5 - Given two strings, one of the strings is one edit away for becoming similar string with the other"
