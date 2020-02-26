@@ -22,6 +22,22 @@ public class StringQuestions {
         return null;
     }
 
+    public static Character nonRepeatingChar(String str){
+        HashMap<Character, Integer> charCount = new HashMap<>();
+        for(int i = 0; i < str.length(); i++){
+            if (charCount.containsKey(str.charAt(i))){
+                charCount.put(str.charAt(i), charCount.get(str.charAt(i)) + 1);
+            }
+            else {
+                charCount.put(str.charAt(i), 1);
+            }
+        }
+        for (int i = 0; i < str.length(); i++){
+            if (charCount.get(str.charAt(i)) == 1) return str.charAt(i);
+        }
+        return null;
+    }
+
     public static Boolean isOneAway(String s1, String s2) {
         if (s1.length() - s2.length() >= 2 || s2.length() - s1.length() >= 2) {
             return false;

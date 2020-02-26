@@ -127,10 +127,14 @@ public class HelloWorld {
         //<</editor-fold>
 
         //<editor-fold> desc = "#4 - Find the first non repeating character in a string"
-        System.out.println(StringQuestions.nonRepeating("abcab")); // should return 'c'
-        System.out.println(StringQuestions.nonRepeating("abab")); // should return null
-        System.out.println(StringQuestions.nonRepeating("aabbbc")); // should return 'c'
-        System.out.println(StringQuestions.nonRepeating("aabbdbc") + resultSeparator); // should return 'd'
+//        System.out.println(StringQuestions.nonRepeating("abcab")); // should return 'c'
+//        System.out.println(StringQuestions.nonRepeating("abab")); // should return null
+//        System.out.println(StringQuestions.nonRepeating("aabbbc")); // should return 'c'
+//        System.out.println(StringQuestions.nonRepeating("aabbdbc") + resultSeparator); // should return 'd'
+        System.out.println(StringQuestions.nonRepeatingChar("abcab")); // should return 'c'
+        System.out.println(StringQuestions.nonRepeatingChar("abab")); // should return null
+        System.out.println(StringQuestions.nonRepeatingChar("aabbbc")); // should return 'c'
+        System.out.println(StringQuestions.nonRepeatingChar("aabbdbc") + resultSeparator); // should return 'd'
         //</editor-fold>
 
         //<editor-fold> desc = "#5 - Given two strings, one of the strings is one edit away for becoming similar string with the other"
@@ -146,6 +150,56 @@ public class HelloWorld {
         System.out.println(StringQuestions.isOneAway("abcde", "abc"));  // should return false
         System.out.println(StringQuestions.isOneAway("abc", "abcde"));  // should return false
         System.out.println(StringQuestions.isOneAway("abc", "bcc") + resultSeparator);  // should return false
+
+        //</editor-fold>
+
+        //<editor-fold> desc = "#6 - Assign numbers in a Minesweeper (Two Dimensional array)"
+        int[][] bombs1 = {{0, 2}, {2, 0}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.mineSweeper(bombs1, 3, 3)));
+        //should return:
+        // [[0, 1, -1],
+        //  [1, 2, 1],
+        //  [-1, 1, 0]]
+
+        int[][] bombs2 = {{0, 0}, {0, 1}, {1, 2}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.mineSweeper(bombs2, 3, 4)));
+        //should return:
+        // [[-1, -1, 2, 1],
+        //  [2, 3, -1, 1],
+        //  [0, 1, 1, 1]]
+
+        int[][] bombs3 = {{1, 1}, {1, 2}, {2, 2}, {4, 3}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.mineSweeper(bombs3, 5, 5)) + resultSeparator);
+        //should return:
+        // [[1, 2, 2, 1, 0],
+        //  [1, -1, -1, 2, 0],
+        //  [1, 3, -1, 2, 0],
+        //  [0, 1, 2, 2, 1],
+        //  [0, 0, 1, -1, 1]]
+
+        //</editor-fold
+
+        //<editor-fold> desc = "#8 - Rotate a 2D array 90 degrees"
+
+        int a1[][] = {{1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.rotate(a1, 3)));
+        //should return:
+        // [[7, 4, 1],
+        //  [8, 5, 2],
+        //  [9, 6, 3]]
+
+        int a2[][] = {{1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}};
+        System.out.println(Arrays.deepToString(TwoDimensionalArrays.rotate(a2, 4)) + resultSeparator);
+        //should return:
+        // [[13, 9, 5, 1],
+        //  [14, 10, 6, 2],
+        //  [15, 11, 7, 3],
+        //  [16, 12, 8, 4]]
 
         //</editor-fold>
 
@@ -203,7 +257,7 @@ public class HelloWorld {
         return true;
     }
 
-    // 04 Check if two strings with numbers have are greater than each other
+    // 04 Check if two strings with numbers are greater than each other
     public static boolean isGreaterThan (String firstNumber, String secondNumber){
         if (firstNumber.length() > secondNumber.length()){
             return true;
