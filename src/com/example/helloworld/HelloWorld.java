@@ -61,6 +61,14 @@ public class HelloWorld {
 
         //</editor-fold>
 
+        //<editor-fold> desc = "Palindromes"
+        System.out.println(Palindrome.isPalindromeFirst("ab cdc ba"));
+        System.out.println(Palindrome.isPalindromeSecond("MADam"));
+        System.out.println(Palindrome.isPalindromeThird("mal@aya@lam"));
+        System.out.println(Palindrome.isPalindromeNumber(101) + resultSeparator);
+
+        //</editor-fold>
+
         //<editor-fold> desc = "11 Essential Coding Interview questions"
 
         //<editor-fold> desc = "#1 - Most frequent occurring item in array"
