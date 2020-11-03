@@ -1,6 +1,5 @@
 package com.example.helloworld;
 
-import java.security.cert.TrustAnchor;
 import java.util.*;
 
 public class HelloWorld {
@@ -51,6 +50,10 @@ public class HelloWorld {
         System.out.println(gq.hasPairWithSum2(intArray,sum) + resultSeparator);
         //</editor-fold>
 
+        //<editor-fold> desc = "08 Reverse a single linked list"
+
+        //</editor-fold>
+
         //<editor-fold> desc = "Array Questions"
 
         //merge two sorted arrays
@@ -58,6 +61,22 @@ public class HelloWorld {
         Integer[] array1 = {0,1,3,4};
         Integer[] array2 = {4,7,8};
         System.out.println(aq.mergeSortedArray(array1,array2)  + resultSeparator);
+        //max amount of money in from houses
+        int[] housesAmount = {2,13};
+        System.out.println("max amount of money in from houses");
+        System.out.println(aq.rob(housesAmount) + resultSeparator);
+
+        //two sums equal to a target number
+        int[] numbers = {1,3,4,5};
+        System.out.println(Arrays.toString(aq.twoSums(numbers, 9)) + resultSeparator);
+
+        //Remove duplicated elements from an array
+        Integer[] duplicates = {6,2,4,3,5,2,6};
+        System.out.println(Arrays.toString(aq.removeDuplicates(duplicates)) + resultSeparator);
+
+        //find missing number in array
+        int[] missingNum = {3,2,4,3,5,2,2};
+        System.out.println(aq.missingNumber(missingNum) + resultSeparator);
 
         //</editor-fold>
 
@@ -66,6 +85,38 @@ public class HelloWorld {
         System.out.println(Palindrome.isPalindromeSecond("MADam"));
         System.out.println(Palindrome.isPalindromeThird("mal@aya@lam"));
         System.out.println(Palindrome.isPalindromeNumber(101) + resultSeparator);
+
+        //</editor-fold>
+
+        //<editor-fold> desc = "String Questions"
+
+        //Reverse String
+        System.out.println(StringQuestions.reverseUsingRecursion("string") + resultSeparator);
+
+        //Longest common prefix
+        String[] strings = {"lee", "Let", "leaf"};
+        System.out.println(StringQuestions.longestCommonPrefix(strings) + resultSeparator);
+
+
+        //</editor-fold>
+
+        //<editor-fold> desc = "Permutations"
+        //Permute by converting string to charArray
+        String originalStr = "AABC";
+        int strLength = originalStr.length();
+        char[] strChar = originalStr.toCharArray();
+//        PermutationQuestions.permutationOne(strChar, 0);
+//        PermutationQuestions.permutationTwo(originalStr, 0, strLength);
+        PermutationQuestions.permutateThree("", originalStr);
+        System.out.println(PermutationQuestions.generatePerm(originalStr) + resultSeparator);
+        System.out.println("PERMUTATION" + resultSeparator);
+
+        //</editor-fold>
+
+        //<editor-fold> desc = "Grid Questions"
+        System.out.println("Grid");
+        System.out.println(GridQuestions.numberOfPaths(4, 3));
+        System.out.println(GridQuestions.numberOfPathsTwo(4, 3) + resultSeparator);
 
         //</editor-fold>
 
@@ -211,6 +262,26 @@ public class HelloWorld {
 
         //</editor-fold>
 
+        //<editor-fold> desc = "#9 - Linked list"
+
+        head = new Node(85);
+        head.next = new Node(55);
+        head.next.next = new Node(65);
+        head.next.next.next = new Node (45);
+
+        //Find the N-the element of a linked list counting from the end
+        System.out.println(LinkedListQuestions.nthElementFromLast(head, 2).data + resultSeparator);
+
+        //Reverse linked list
+        head = LinkedListQuestions.reverseLinkedList(head);
+        while (head != null){
+            System.out.print(head.data + "->");
+            head = head.next;
+        }
+        System.out.println(resultSeparator);
+
+        //</editor-fold>
+
         //</editor-fold>
 
     }
@@ -303,4 +374,68 @@ public class HelloWorld {
         }
         return false;
     }
+
+    // 08 Reverse a single linked list
+    public static Node head;
+    public static class Node{
+        int data;
+        Node next;
+
+        Node(int d){
+            data = d;
+            next = null;
+        }
+    }
+//    static Node reverseLinkedList(Node node){
+//        Node prev = null;
+//        Node curr = node;
+//        Node next = null;
+//        while(curr != null){
+//            next = curr.next;
+//            curr.next = prev;
+//            prev = curr;
+//            curr = next;
+//        }
+//        return prev;
+//    }
+
+
+    /**
+A robot is located at the top-left corner of a m x n grid.
+
+The robot can only move either down or right at any point in time.
+
+It is trying to reach the bottom-right corner of the grid.
+
+How many possible unique paths are there?
+
+2
+-------
+|x |  |
+-------
+|  | y|
+-------
+
+
+
+6
+----------
+|x |  |  |
+----------
+|  |  |  |
+----------
+|  |  | y|
+----------
+
+
+     int numberRow = 2;
+     int numberCol = 2;
+
+     int [][] board = new int[numberRow][numberCol];
+
+     //x  = board[0][0]
+     //y  = board[1][1]
+
+*/
+
 }

@@ -42,4 +42,26 @@ public class Palindrome {
         }
         return temp == sum;
     }
+
+    public boolean isPalindromeNumberTwo(int x) {
+        String str = String.valueOf(x);
+        int start = 0;
+        int end = str.length() - 1;
+        while(start < end){
+            if(str.charAt(start++) != str.charAt(end--)) return false;
+        }
+        return true;
+    }
+
+    public boolean isPalindromeThree(int num){
+        if(num < 0) return  false;
+        int reversed = 0, remainder, original = num;
+        while(num != 0) {
+            remainder = num % 10; // reversed integer is stored in variable
+            reversed = reversed * 10 + remainder; //multiply reversed by 10 then add the remainder so it gets stored at next decimal place.
+            num  /= 10;  //the last digit is removed from num after division by 10.
+        }
+        // palindrome if original and reversed are equal
+        return original == reversed;
+    }
 }
