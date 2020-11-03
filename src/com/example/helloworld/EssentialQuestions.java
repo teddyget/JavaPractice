@@ -7,7 +7,8 @@ public class EssentialQuestions {
 
     // Most frequent occurring item in an array
     public static Integer mostFrequent(int[] givenArray) {
-        Integer maxCount = -1; Integer maxItem = null;
+        Integer maxCount = -1;
+        Integer maxItem = null;
         HashMap<Integer, Integer> count = new HashMap<Integer, Integer>();
         for (int i : givenArray) {
             if (count.containsKey(i)) {
@@ -23,7 +24,7 @@ public class EssentialQuestions {
         return maxItem;
     }
 
-    // Common elements in two sorted arrays
+    // Find Common elements in two sorted arrays
     public static Integer[] commonElements(int[] array1, int[] array2) {
         int p1 = 0;
         int p2 = 0;
