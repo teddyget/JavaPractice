@@ -60,6 +60,7 @@ public class HelloWorld {
         ArrayQuestions aq = new ArrayQuestions();
         Integer[] array1 = {0,1,3,4};
         Integer[] array2 = {4,7,8};
+        System.out.println("Merge two sorted arrays");
         System.out.println(aq.mergeSortedArray(array1,array2)  + resultSeparator);
         //max amount of money in from houses
         int[] housesAmount = {2,13};
@@ -282,6 +283,34 @@ public class HelloWorld {
 
         //</editor-fold>
 
+        //</editor-fold>
+
+        //<editor-fold> desc = AZpractice
+        System.out.println("Azpractice - palindrome");
+        System.out.println(AZpractice.countPS("aple"));
+        System.out.println(AZpractice.countSubstrings("aple"));
+        System.out.println(AZpractice.countSubstringsTwo("aple"));
+
+        System.out.println("Azpractice - Find the Remainder without modulo");
+        System.out.println(AZpractice.getRemainder(10, 4));
+        System.out.println(AZpractice.getRemainderTwo(10,4));
+        System.out.println(AZpractice.getRemainderTwo(10,4));
+
+        System.out.println("Azpractice - Merge Two Sorted arrays");
+        int[] arr1 = {1,2,3};
+        int[] arr2 = {2,5,6};
+        System.out.println(Arrays.toString(AZpractice.mergeSortedArray(arr1,arr2)));
+        int[] sarray1 = {1,2,3,0,0,0}, sarray2 = {2,5,6};
+        System.out.println(Arrays.toString(AZpractice.merge(sarray1, 3, sarray2, 3)));
+
+
+        System.out.println("Azpractice - Push all zeros to the end of an array");
+        int[] arrzero = {1,0,2,0,3,0};
+        AZpractice.moveZeroes(arrzero);
+        System.out.println(Arrays.toString(arrzero));
+
+        System.out.println("AZpractice - find max repeating char in a string");
+        System.out.println(AZpractice.maxRepeatingChar("aabbbccddeeee"));
         //</editor-fold>
 
     }
