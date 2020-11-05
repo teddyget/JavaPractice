@@ -1,6 +1,8 @@
 package com.example.helloworld;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class AZpractice {
     /**
@@ -70,6 +72,33 @@ public class AZpractice {
             count++;
         }
         return count;
+    }
+
+    /** Given a string which consists of letters, return the length of the longest palindrome that can
+     * be built with those letters
+     */
+    public static int longestPalindrome(String s) {
+        int[] count = new int[128];
+        int length = 0;
+        for(char c: s.toCharArray()){
+            if(++count[c] == 2){
+                length += 2;
+                count[c] = 0;
+            }
+        }
+        return (length == s.length())? length: length+1;
+    }
+
+    public static int longestPalindromeSet(String s) {
+        if (s == null || s.length() < 1) return 0;
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (set.contains(s.charAt(i))) set.remove(s.charAt(i));
+            else set.add(s.charAt(i));
+        }
+        if (set.size() <= 1) return s.length();
+        return s.length() - set.size() + 1;
+
     }
 
     /**
@@ -189,5 +218,46 @@ public class AZpractice {
         return res;
     }
 
+    /**
+     * Given an array integers, replace every element of an array by product of all other elements
+     * (product should not include the element being replaced)
+     * Example:
+     *      Input: [1,2,3,4]
+     *      Output: [24,12,8,6]
+     */
+    public static int[] productExceptSelf(int[] nums) {
+
+        // The length of the input array
+        int length = nums.length;
+
+        // Final answer array to be returned
+        int[] answer = new int[length];
+
+        // answer[i] contains the product of all the elements to the left
+        // Note: for the element at index '0', there are no elements to the left,
+        // so the answer[0] would be 1
+        answer[0] = 1;
+        for (int i = 1; i < length; i++) {
+
+            // answer[i - 1] already contains the product of elements to the left of 'i - 1'
+            // Simply multiplying it with nums[i - 1] would give the product of all
+            // elements to the left of index 'i'
+            answer[i] = nums[i - 1] * answer[i - 1];
+        }
+
+        // R contains the product of all the elements to the right
+        // Note: for the element at index 'length - 1', there are no elements to the right,
+        // so the R would be 1
+        int R = 1;
+        for (int i = length - 1; i >= 0; i--) {
+
+            // For the index 'i', R would contain the
+            // product of all elements to the right. We update R accordingly
+            answer[i] = answer[i] * R;
+            R *= nums[i];
+        }
+
+        return answer;
+    }
 
 }

@@ -290,6 +290,8 @@ public class HelloWorld {
         System.out.println(AZpractice.countPS("aple"));
         System.out.println(AZpractice.countSubstrings("aple"));
         System.out.println(AZpractice.countSubstringsTwo("aple"));
+        System.out.println(AZpractice.longestPalindrome("abaabde"));
+        System.out.println(AZpractice.longestPalindromeSet("abaabde"));
 
         System.out.println("Azpractice - Find the Remainder without modulo");
         System.out.println(AZpractice.getRemainder(10, 4));
@@ -311,6 +313,10 @@ public class HelloWorld {
 
         System.out.println("AZpractice - find max repeating char in a string");
         System.out.println(AZpractice.maxRepeatingChar("aabbbccddeeee"));
+
+        System.out.println("AZpractice - Array elements product except self");
+        int[] product = {1,2,3,4};
+        System.out.println(Arrays.toString(AZpractice.productExceptSelf(product)));
         //</editor-fold>
 
     }
